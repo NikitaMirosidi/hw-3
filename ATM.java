@@ -1,5 +1,25 @@
 public class ATM {
-    public int countBanknotes(int sum){
+        public int countBanknotes(int sum){
+            int[] arr = {500, 200, 100, 50, 20, 10, 5, 2, 1};
+
+            int count = 0;
+            int a = 0;
+            int b = sum;
+
+            while (a < arr.length){
+                if (b >= arr[a]){
+                    count += b / arr[a];
+                    b %= arr[a];
+                }
+                a++;
+            }
+            return count;
+        }
+
+        public static void main(String[] args){}
+    }
+
+    /*public int countBanknotes(int sum){
         int[] arr = {500, 200, 100, 50, 20, 10, 5, 2, 1};
         String text = "\nСумма " + sum + " будет выдана банкнотами:\n";
         int count = 0;
@@ -21,10 +41,10 @@ public class ATM {
 
     public static void main(String[] args){
         ATM test = new ATM();
-        System.out.println("И того " + test.countBanknotes(3245) + " банкнот");
+        System.out.println("И того " + test.countBanknotes(2419) + " банкнот");
         System.out.println("И того " + test.countBanknotes(52142) + " банкнот");
         System.out.println("И того " + test.countBanknotes(247423254) + " банкнот");
-    }
+    }*/
 
     /*public int countBanknotes(int sum){
         int count = 0;
@@ -76,5 +96,5 @@ public class ATM {
         return count;
     }
 
-    public static void main(String[] args){}*/
-}
+    public static void main(String[] args){}
+}*/
